@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Quiz</title>
+  <!-- Import Materialize CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    .container {
+      text-align: center;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .input-field input[type="number"] {
+      text-align: center;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Math Quiz</h1>
+    <button id="start-btn" class="btn waves-effect waves-light" onclick="initiateQuiz()">Start Quiz</button>
+    
+    <div id="quiz-panel" class="hidden">
+      <p id="question" class="flow-text"></p>
+      <div class="input-field">
+        <input type="number" id="answer" placeholder="Enter your answer" onkeypress="handleKeyPress(event)" />
+      </div>
+      <button class="btn waves-effect waves-light" onclick="checkAnswer()">Submit</button>
+      <p id="result" class="flow-text"></p>
+      <button class="btn red waves-effect waves-light" onclick="stopQuiz()">Stop Quiz</button>
+    </div>
+  </div>
+  <!-- Import Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="index.js"></script>
+  <script>
+    function initiateQuiz() {
+      document.getElementById('start-btn').classList.add('hidden');
+      document.getElementById('quiz-panel').classList.remove('hidden');
+      startQuiz();
+    }
+
+    function stopQuiz() {
+      document.getElementById('quiz-panel').classList.add('hidden');
+      document.getElementById('start-btn').classList.remove('hidden');
+      stopQuiz();
+    }
+
+    function handleKeyPress(event) {
+      if (event.key === 'Enter') {
+        checkAnswer();
+      }
+    }
+  </script>
+</body>
+</html>
