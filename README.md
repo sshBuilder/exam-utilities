@@ -16,7 +16,7 @@ To get started with the Math Quiz Web App, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/math-quiz-web-app.git
+    git clone [https://github.com/sshBuilder/math-prep.git](https://github.com/sshBuilder/math-prep)
     ```
 2. Navigate to the project directory:
     ```bash
